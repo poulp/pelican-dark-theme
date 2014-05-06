@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if articles %}
+        {% for article in articles %}
+            <div class="article-index">
+                <div class="grid grid-pad">
+                    <div class="col-8-12">
+                        <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
+                        <small>{{ article.date }}</small>
+                    </div>
+                    <div class="col-4-12">
+                        {% for tag in article.tags %}
+                            <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endblock %}

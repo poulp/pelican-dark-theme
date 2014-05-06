@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/theme/css/normalize.css" />
+        <link rel="stylesheet" href="/theme/css/simplegrid.css" />
+        <link rel="stylesheet" href="/theme/css/main.css" />
+    </head>
+
+    <body>
+        <div class="grid grid-pad">
+            <div class="col-1-1">
+                <h1>{{ SITENAME }}</h1>
+            </div>
+        </div>
+        <header class="grid grid-pad">
+            <div class="col-1-1 header">
+                {% block header %}
+                    <ul id="navigation">
+                        <li><a href="/">Accueil</a></li>
+                        {% for cat, null in categories %}
+                            <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                        {% endfor %}
+                        {% if DISPLAY_PAGES_ON_MENU != False %}
+                            {% for page in pages %}
+                                <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                            {% endfor %}
+                        {% endif %}
+                    </ul>
+                {% endblock %}
+            </div>
+        </header>
+        <div class="grid grid-pad">
+            <section class="col-10-12" id="content">
+                {% block content %}{% endblock %}
+            </section>
+            <aside class="col-2-12" id="side">
+                {% block side %}
+                    <div class="widget cat">
+                        <h2>Catégories</h2>
+                        <ul class="cat-list">
+                            {% for cat, null in categories %}
+                                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endblock %}
+            </aside>
+        </div>
+        <footer>
+            <div class="grid grid-pad">
+                <div class="col-1-1 footer">
+                    {% block footer %}footer{% endblock %}
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

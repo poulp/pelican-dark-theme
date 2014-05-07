@@ -8,16 +8,11 @@
     </head>
 
     <body>
-        <div class="grid grid-pad">
-            <div class="col-1-1">
-                <h1>{{ SITENAME }}</h1>
-            </div>
-        </div>
         <header class="grid grid-pad">
             <div class="col-1-1 header">
                 {% block header %}
                     <ul id="navigation">
-                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/">{{ SITENAME }}</a></li>
                         {% for cat, null in categories %}
                             <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
                         {% endfor %}
@@ -38,11 +33,16 @@
                 {% block side %}
                     <div class="widget cat">
                         <h2>Catégories</h2>
-                        <ul class="cat-list">
-                            {% for cat, null in categories %}
-                                <li><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-                            {% endfor %}
-                        </ul>
+                        {% for cat, null in categories %}
+                            <div class="grid grid-pad list-label">
+                                <div class="col-1-12">
+                                    <a href="{{ SITEURL }}/{{ cat.url }}"><strong>{{ cat.article }}</strong></a>
+                                </div>
+                                <div class="col-1-12">
+                                    <span class="label">3</span>
+                                </div>
+                            </div>
+                        {% endfor %}
                     </div>
                 {% endblock %}
             </aside>

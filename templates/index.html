@@ -7,12 +7,16 @@
                 <div class="grid grid-pad">
                     <div class="col-8-12">
                         <h3><a href="{{ article.url }}">{{ article.title }}</a></h3>
-                        <small>{{ article.date }}</small>
+                        <small>{{ article.date.strftime('%d/%m/%Y') }}</small>
+                        <small>tags: </small>{% for tag in article.tags %}
+                            {% if loop.last %}
+                            <span class="tag">{{ tag }}</span>
+                        {% else %}
+                            <span class="tag">{{ tag }},</span>
+                        {% endif %}
+                        {% endfor %}
                     </div>
                     <div class="col-4-12">
-                        {% for tag in article.tags %}
-                            <span class="tag">{{ tag }}</span>
-                        {% endfor %}
                     </div>
                 </div>
             </div>

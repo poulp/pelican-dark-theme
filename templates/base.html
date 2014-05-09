@@ -56,6 +56,18 @@
                     </div>
                     {% endif %}
 
+                    {% if SOCIAL %}
+                    <div class="widget">
+                        <h2>Social</h2>
+                        {% for name, url in SOCIAL %}
+                            <div class="cat-link">
+                                <a href="{{ url }}">{{ name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+
                 {% endblock %}
             </aside>
         </div>

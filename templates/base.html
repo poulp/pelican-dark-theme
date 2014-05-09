@@ -25,25 +25,37 @@
                 {% endblock %}
             </div>
         </header>
+
         <div class="grid grid-pad">
             <section class="col-10-12" id="content">
                 {% block content %}{% endblock %}
             </section>
+
             <aside class="col-2-12" id="side">
                 {% block side %}
+    
+                    {% if categories %}
                     <div class="widget cat">
                         <h2>Catégories</h2>
                         {% for cat, null in categories %}
-                            <div class="grid grid-pad list-label">
-                                <div class="col-1-12">
-                                    <a href="{{ SITEURL }}/{{ cat.url }}"><strong>{{ cat.article }}</strong></a>
-                                </div>
-                                <div class="col-1-12">
-                                    <span class="label">3</span>
-                                </div>
+                            <div class="cat-link">
+                                <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat.name }}</a>
                             </div>
                         {% endfor %}
                     </div>
+                    {% endif %}
+                   
+                    {% if LINKS %}
+                    <div class="widget">
+                        <h2>Liens</h2>
+                        {% for name, url in LINKS %}
+                            <div class="cat-link">
+                                <a href="{{ url }}">{{ name }}</a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
                 {% endblock %}
             </aside>
         </div>

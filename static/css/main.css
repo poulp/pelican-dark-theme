@@ -8,6 +8,10 @@ a {
     color: #1E67CE;
 }
 
+strong {
+    color: #439A40;
+}
+
 a:visited {
     text-decoration: none;
     color: #1E67CE;
@@ -137,4 +141,20 @@ a:hover {
     border-bottom: 1px dashed #414C57;
     padding-bottom:5px;
     padding-top: 5px;
+}
+
+.article {
+    padding: 20px;
+    background-color: #22242E;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.article h1 {
+    padding:0;
+    margin:0;
+}
+
+.article-content {
+    color: #D1D1D1;
 }

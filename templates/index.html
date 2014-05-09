@@ -10,9 +10,9 @@
                         <small>publié le {{ article.date.strftime('%d/%m/%Y') }}</small>
                         <small>| tags : </small>{% for tag in article.tags %}
                             {% if loop.last %}
-                            <span class="tag">{{ tag }}</span>
+    <span class="tag"><a href="{{ SITEURL}}/{{ tag.url }}">{{ tag }}</a></span>
                         {% else %}
-                            <span class="tag">{{ tag }},</span>
+    <span class="tag"><a href="{{ SITEURL}}/{{ tag.url }}">{{ tag }}</a>,</span>
                         {% endif %}
                         {% endfor %}
                     </div>

@@ -19,9 +19,11 @@ a:hover {
 
 .header {
     background-color: #2B3844;
-    margin:0;
     padding-top:10px;
     padding-bottom:10px;
+     clear: both;
+     margin: 0 auto 0 auto;
+     padding: 2.5em 0 0 0;
 }
 
 #navigation {
@@ -104,6 +106,8 @@ a:hover {
 
 .footer {
     background-color: #2B3844;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .list-label {

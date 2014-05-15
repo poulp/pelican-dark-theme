@@ -34,38 +34,38 @@
 
             <aside class="col-2-12" id="side">
                 {% block side %}
-    
+
                     {% if categories %}
-                    <div class="widget cat">
-                        <h2>Catégories</h2>
-                        {% for cat, null in categories %}
-                            <div class="cat-link">
-                                <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat.name }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div class="widget cat">
+                            <h2>Catégories</h2>
+                            {% for cat, null in categories %}
+                                <div class="cat-link">
+                                    <a href="{{ SITEURL }}/{{ cat.url }}">{{ cat.name }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     {% endif %}
-                   
+
                     {% if LINKS %}
-                    <div class="widget">
-                        <h2>Liens</h2>
-                        {% for name, url in LINKS %}
-                            <div class="cat-link">
-                                <a href="{{ url }}">{{ name }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div class="widget">
+                            <h2>Liens</h2>
+                            {% for name, url in LINKS %}
+                                <div class="cat-link">
+                                    <a href="{{ url }}">{{ name }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     {% endif %}
 
                     {% if SOCIAL %}
-                    <div class="widget">
-                        <h2>Social</h2>
-                        {% for name, url in SOCIAL %}
-                            <div class="cat-link">
-                                <a href="{{ url }}">{{ name }}</a>
-                            </div>
-                        {% endfor %}
-                    </div>
+                        <div class="widget">
+                            <h2>Social</h2>
+                            {% for name, url in SOCIAL %}
+                                <div class="cat-link">
+                                    <a href="{{ url }}">{{ name }}</a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     {% endif %}
 
 

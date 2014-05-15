@@ -157,7 +157,11 @@ a:hover {
 }
 
 .article-content {
-    color: #D1D1D1;
+    color: #fff;
+}
+
+.article-content h2 {
+    color: #AA7A32;
 }
 
 .highlight {
